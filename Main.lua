@@ -1,34 +1,21 @@
-local script_key = "nncEGIHohcvnbVoinbfhNnbvnSLJf"
 local valid_keys = {
     "nncEGIHohcvnbVoinbfhNnbvnSLJf",
     "key2hier",
     "key3hier"
 }
 
-if not script_key or script_key == "" then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "❌ No Key Provided",
-        Text = "Je moet een key invullen om dit script te gebruiken.",
-        Duration = 5
-    })
-    return
-end
+local script_key = getgenv().script_key
+local unlocked = false
 
-local function isValidKey(key)
-    for _, v in pairs(valid_keys) do
-        if v == key then
-            return true
-        end
+for _, v in ipairs(valid_keys) do
+    if script_key == v then
+        unlocked = true
+        break
     end
-    return false
 end
 
-if not isValidKey(script_key) then
-    game.StarterGui:SetCore("SendNotification", {
-        Title = "❌ Invalid Key",
-        Text = "Jij hebt geen geldige key. Fix je toegang.",
-        Duration = 5
-    })
+if not unlocked then
+    warn("[TEMIC HUB] Key is ongeldig. Script blijft gelockt.")
     return
 end
 
