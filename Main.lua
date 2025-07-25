@@ -40,7 +40,7 @@ local Tabs = {
 }
 
 Library:Notify({
-    Title = "✅ Script unlocked successfully!",
+    Title = "✅ Script unlockedfully!",
     Description = "Thank you for using TEMIC!",
     Time = 3,
 })
