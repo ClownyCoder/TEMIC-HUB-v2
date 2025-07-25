@@ -5,6 +5,15 @@ local valid_keys = {
     "key3hier"
 }
 
+if not script_key or script_key == "" then
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "❌ No Key Provided",
+        Text = "Je moet een key invullen om dit script te gebruiken.",
+        Duration = 5
+    })
+    return
+end
+
 local function isValidKey(key)
     for _, v in pairs(valid_keys) do
         if v == key then
@@ -40,7 +49,7 @@ local Tabs = {
 }
 
 Library:Notify({
-    Title = "✅ Script unlockedfully!",
+    Title = "✅ Script unlocked successfully!",
     Description = "Thank you for using TEMIC!",
     Time = 3,
 })
