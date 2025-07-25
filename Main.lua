@@ -4,18 +4,23 @@ local valid_keys = {
     "key3hier"
 }
 
-local script_key = getgenv().script_key
-local unlocked = false
+local key = getgenv().script_key
 
+if not key or key == "" then
+    warn("[TEMIC HUB] Geen key ontvangen via console.")
+    return
+end
+
+local unlocked = false
 for _, v in ipairs(valid_keys) do
-    if script_key == v then
+    if v == key then
         unlocked = true
         break
     end
 end
 
 if not unlocked then
-    warn("[TEMIC HUB] Key is ongeldig. Script blijft gelockt.")
+    warn("[TEMIC HUB] Key gevonden in console, maar ongeldig.")
     return
 end
 
