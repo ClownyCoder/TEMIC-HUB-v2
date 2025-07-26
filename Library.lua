@@ -253,9 +253,9 @@ local Templates = {
         Resizable = true,
         CornerRadius = 4,
         NotifySide = "Right",
-        ShowCustomCursor = true,
+        ShowCustomCursor = false,
         Font = Enum.Font.Code,
-        ToggleKeybind = Enum.KeyCode.RightControl,
+        ToggleKeybind = Enum.KeyCode.RightShift,
         MobileButtonsSide = "Left",
     },
     Toggle = {
